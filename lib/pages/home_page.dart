@@ -22,3 +22,106 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+class CoffeeModel {
+  late String name;
+  late double price;
+  late double rating;
+  late String image;
+  late String type;
+
+  CoffeeModel({
+    required this.name,
+    required this.price,
+    required this.rating,
+    required this.image,
+    required this.type,
+  });
+}
+
+final coffees = [
+  CoffeeModel(
+    name: "Caffe Mocha",
+    price: 4.53,
+    rating: 4.8,
+    image: "assets/coffee-1.jpg",
+    type: "Deep Foam",
+  ),
+  CoffeeModel(
+    name: "Cappuccino",
+    price: 3.85,
+    rating: 4.7,
+    image: "assets/coffee-2.jpg",
+    type: "Medium Foam",
+  ),
+  CoffeeModel(
+    name: "Espresso",
+    price: 2.95,
+    rating: 4.9,
+    image: "assets/coffee-1.jpg",
+    type: "No Foam",
+  ),
+  CoffeeModel(
+    name: "Latte",
+    price: 4.25,
+    rating: 4.6,
+    image: "assets/coffee-2.jpg",
+    type: "Light Foam",
+  ),
+  CoffeeModel(
+    name: "Americano",
+    price: 3.15,
+    rating: 4.4,
+    image: "assets/coffee-1.jpg",
+    type: "No Foam",
+  ),
+  CoffeeModel(
+    name: "Macchiato",
+    price: 4.75,
+    rating: 4.8,
+    image: "assets/coffee-2.jpg",
+    type: "Spotted Foam",
+  ),
+  CoffeeModel(
+    name: "Flat White",
+    price: 4.35,
+    rating: 4.5,
+    image: "assets/coffee-1.jpg",
+    type: "Micro Foam",
+  ),
+  CoffeeModel(
+    name: "Caramel Latte",
+    price: 5.25,
+    rating: 4.7,
+    image: "assets/coffee-2.jpg",
+    type: "Sweet Foam",
+  ),
+  CoffeeModel(
+    name: "Iced Coffee",
+    price: 3.65,
+    rating: 4.3,
+    image: "assets/coffee-1.jpg",
+    type: "Cold Brew",
+  ),
+  CoffeeModel(
+    name: "Frappuccino",
+    price: 5.85,
+    rating: 4.6,
+    image: "assets/coffee-2.jpg",
+    type: "Whipped Cream",
+  ),
+  CoffeeModel(
+    name: "Turkish Coffee",
+    price: 3.45,
+    rating: 4.2,
+    image: "assets/coffee-1.jpg",
+    type: "Traditional",
+  ),
+  CoffeeModel(
+    name: "Affogato",
+    price: 4.95,
+    rating: 4.9,
+    image: "assets/coffee-2.jpg",
+    type: "Ice Cream",
+  ),
+];
