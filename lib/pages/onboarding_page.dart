@@ -1,5 +1,7 @@
+import 'package:d5_9_1/pages/main_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -42,11 +44,21 @@ class _OnboardingPageState extends State<OnboardingPage> {
           ),
           Spacer(),
           SafeArea(
-            child: CupertinoButton(
-              color: Color(0xffC67C4E),
-              onPressed: () {},
-              child: Text(
-                "Get Started",
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 16,
+                vertical: 8,
+              ),
+              child: CupertinoButton(
+                color: Color(0xffC67C4E),
+                onPressed: () {
+                  Get.off(MainPage());
+                },
+                child: Center(
+                  child: Text(
+                    "Get Started",
+                  ),
+                ),
               ),
             ),
           ),
