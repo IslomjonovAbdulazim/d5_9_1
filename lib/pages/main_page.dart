@@ -1,7 +1,7 @@
-import 'package:d5_9_1/pages/cart_page.dart';
-import 'package:d5_9_1/pages/home_page.dart';
-import 'package:d5_9_1/pages/like_page.dart';
-import 'package:d5_9_1/pages/notification_page.dart';
+import 'cart_page.dart';
+import 'home_page.dart';
+import 'like_page.dart';
+import 'notification_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

@@ -1,4 +1,4 @@
-import 'package:d5_9_1/pages/onboarding_page.dart';
+import 'pages/onboarding_page.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
