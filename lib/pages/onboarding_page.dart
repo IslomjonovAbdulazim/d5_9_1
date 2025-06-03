@@ -57,6 +57,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 child: Center(
                   child: Text(
                     "Get Started",
+                    style: GoogleFonts.sora(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               ),
