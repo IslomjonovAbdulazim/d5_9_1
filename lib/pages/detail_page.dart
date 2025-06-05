@@ -45,7 +45,6 @@ class _DetailPageState extends State<DetailPage> {
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: ListView(
             children: [
-
               // Homework .....
 
               Text(
