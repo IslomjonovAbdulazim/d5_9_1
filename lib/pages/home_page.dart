@@ -1,4 +1,7 @@
+import 'package:d5_9_1/pages/detail_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,8 +17,44 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(20),
-          child: Center(
-            child: Column(),
+          child: ListView(
+            children: [
+              GridView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: coffees.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 15,
+                  crossAxisSpacing: 15,
+                ),
+                itemBuilder: (context, index) {
+                  final model = coffees[index];
+                  return CupertinoButton(
+                    color: Colors.white,
+                    padding: EdgeInsets.all(12),
+                    borderRadius: BorderRadius.circular(16),
+                    onPressed: () {
+                      Get.to(DetailPage());
+                    },
+                    child: Column(
+                      children: [
+                        AspectRatio(
+                          aspectRatio: 1,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(16),
+                            child: Image.asset(
+                              model.image,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
         ),
       ),
