@@ -116,6 +116,21 @@ class _HomePageState extends State<HomePage> {
                                 fontSize: 16,
                               ),
                             ),
+                            Spacer(),
+                            SizedBox(
+                              height: 35,
+                              width: 35,
+                              child: CupertinoButton(
+                                color: Color(0xffC67C4E),
+                                padding: EdgeInsets.zero,
+                                onPressed: () {},
+                                child: Icon(
+                                  Icons.add,
+                                  size: 18,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ],
