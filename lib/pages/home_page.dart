@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisCount: 2,
                   mainAxisSpacing: 20,
                   crossAxisSpacing: 25,
-                  childAspectRatio: 2 / 3,
+                  childAspectRatio: 7 / 10,
                 ),
                 itemBuilder: (context, index) {
                   final model = coffees[index];
@@ -97,6 +97,26 @@ class _HomePageState extends State<HomePage> {
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
                           ),
+                        ),
+                        Text(
+                          model.type,
+                          style: GoogleFonts.sora(
+                            color: Color(0xffA2A2A2),
+                            fontSize: 12,
+                          ),
+                        ),
+                        Spacer(),
+                        Row(
+                          children: [
+                            Text(
+                              "\$ ${model.price}",
+                              style: GoogleFonts.sora(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
