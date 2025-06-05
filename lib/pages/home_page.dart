@@ -15,11 +15,67 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffF9F9F9),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(30),
+          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           child: ListView(
             children: [
+              Text(
+                "Location",
+                style: GoogleFonts.sora(
+                  color: Color(0xffA2A2A2),
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              Text(
+                "Tashkent, Uzbekistan",
+                style: GoogleFonts.sora(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(height: 10),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      style: GoogleFonts.sora(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      cursorColor: Colors.black,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Color(0xffF5F5F5),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16),
+                          borderSide: BorderSide.none,
+                        ),
+                        hintText: "Search Coffee",
+                        hintStyle: GoogleFonts.sora(
+                          fontWeight: FontWeight.w300,
+                          color: Colors.black,
+                          fontSize: 14,
+                        )
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  CupertinoButton(
+                    padding: EdgeInsets.all(19),
+                    color: Color(0xffC67C4E),
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.menu,
+                      color: Colors.white,
+                      size: 16,
+                    ),
+                  ),
+                ],
+              ),
               GridView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
