@@ -12,6 +12,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List categories = [
+    "All Coffee",
+    "Machiato",
+    "Latte",
+    "Americano",
+    "Cappuccino",
+  ];
+  int selected = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,19 +57,18 @@ class _HomePageState extends State<HomePage> {
                       ),
                       cursorColor: Colors.black,
                       decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color(0xffF5F5F5),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16),
-                          borderSide: BorderSide.none,
-                        ),
-                        hintText: "Search Coffee",
-                        hintStyle: GoogleFonts.sora(
-                          fontWeight: FontWeight.w300,
-                          color: Colors.black,
-                          fontSize: 14,
-                        )
-                      ),
+                          filled: true,
+                          fillColor: Color(0xffF5F5F5),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                            borderSide: BorderSide.none,
+                          ),
+                          hintText: "Search Coffee",
+                          hintStyle: GoogleFonts.sora(
+                            fontWeight: FontWeight.w300,
+                            color: Colors.black,
+                            fontSize: 14,
+                          )),
                     ),
                   ),
                   SizedBox(width: 10),
@@ -76,6 +84,41 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
+              SizedBox(height: 10),
+              Image.asset("assets/banner.png"),
+              SizedBox(height: 10),
+              SizedBox(
+                height: 40,
+                child: ListView.builder(
+                  itemCount: categories.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4),
+                      child: CupertinoButton(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        color: index == selected
+                            ? Color(0xffC67C4E)
+                            : Color(0xffF2F2F2),
+                        onPressed: () {
+                          selected = index;
+                          setState(() {});
+                        },
+                        child: Text(
+                          categories[index],
+                          style: GoogleFonts.sora(
+                            fontSize: 16,
+                            color:
+                                index == selected ? Colors.white : Colors.black,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              SizedBox(height: 10),
               GridView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
