@@ -2,6 +2,7 @@ import 'package:d5_9_1/pages/detail_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,7 +17,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(30),
           child: ListView(
             children: [
               GridView.builder(
@@ -25,8 +26,9 @@ class _HomePageState extends State<HomePage> {
                 itemCount: coffees.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 15,
-                  crossAxisSpacing: 15,
+                  mainAxisSpacing: 20,
+                  crossAxisSpacing: 25,
+                  childAspectRatio: 2 / 3,
                 ),
                 itemBuilder: (context, index) {
                   final model = coffees[index];
@@ -38,15 +40,62 @@ class _HomePageState extends State<HomePage> {
                       Get.to(DetailPage());
                     },
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         AspectRatio(
-                          aspectRatio: 1,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(16),
-                            child: Image.asset(
-                              model.image,
-                              fit: BoxFit.cover,
-                            ),
+                          aspectRatio: 1 / 1,
+                          child: Stack(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(16),
+                                child: Image.asset(
+                                  model.image,
+                                  fit: BoxFit.cover,
+                                  width: 1000,
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.topRight,
+                                child: Container(
+                                  width: 60,
+                                  height: 25,
+                                  decoration: BoxDecoration(
+                                    color: Colors.black.withOpacity(0.4),
+                                    borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(16),
+                                      bottomLeft: Radius.circular(24),
+                                    ),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.star,
+                                        size: 16,
+                                        color: Colors.yellow,
+                                      ),
+                                      SizedBox(width: 2),
+                                      Text(
+                                        model.rating.toString(),
+                                        style: GoogleFonts.sora(
+                                          fontSize: 11,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Text(
+                          model.name,
+                          style: GoogleFonts.sora(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ],
