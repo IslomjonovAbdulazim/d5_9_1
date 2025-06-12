@@ -1,5 +1,7 @@
+import 'package:d5_9_1/pages/order_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DetailPage extends StatefulWidget {
@@ -43,10 +45,30 @@ class _DetailPageState extends State<DetailPage> {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
-          child: ListView(
+          child: Column(
             children: [
               // Homework .....
-
+              ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: Image.asset("assets/detail-coffee.jpg"),
+              ),
+              Text("Coffee Mocha"),
+              Row(
+                children: [
+                  Text("Ice/Hot"),
+                  Spacer(),
+                  Icon(Icons.drive_eta),
+                  Icon(Icons.add),
+                  Icon(Icons.abc_outlined),
+                ],
+              ),
+              Row(
+                children: [
+                  Icon(Icons.star),
+                  Text("4.8"),
+                  Text("(230)"),
+                ],
+              ),
               Text(
                 "Description",
                 style: GoogleFonts.sora(
@@ -127,6 +149,26 @@ class _DetailPageState extends State<DetailPage> {
                     )
                     .toList(),
               ),
+              Spacer(),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text("Price"),
+                      Text("\$4.53"),
+                    ],
+                  ),
+                  Expanded(
+                    child: CupertinoButton(
+                      onPressed: () {
+                        Get.to(OrderPage());
+                      },
+                      child: Text("Buy Now"),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
             ],
           ),
         ),
